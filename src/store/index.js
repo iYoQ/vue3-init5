@@ -1,8 +1,39 @@
 import { createStore } from "vuex";
 
 export default createStore({
-  state: {},
-  mutations: {},
+  state: {
+    access: "",
+    refresh: "",
+    username: "",
+    role: "",
+    isNewsmaker: false,
+  },
+  mutations: {
+    initializeStore(state) {
+      if (localStorage.getItem("access")) {
+        state.access = localStorage.getItem("access");
+        state.refresh = localStorage.getItem("refresh");
+      } else {
+        state.access = "";
+        state.refresh = "";
+      }
+    },
+    setAccess(state, access) {
+      state.access = access;
+    },
+    setRefresh(state, refresh) {
+      state.refresh = refresh;
+    },
+    setUsername(state, username) {
+      state.username = username;
+    },
+    setRole(state, role) {
+      state.role = role;
+    },
+    setIsNewsmaker(state, isNewsmaker) {
+      state.isNewsmaker = isNewsmaker;
+    },
+  },
   actions: {},
   modules: {},
 });
