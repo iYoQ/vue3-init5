@@ -86,7 +86,7 @@
 </template>
 
 <script>
-import { login } from "@/apiUsers.js";
+import { login, registration } from "@/apiUsers.js";
 export default {
   name: "Login",
   data() {
@@ -104,7 +104,15 @@ export default {
       const email = this.email;
       const password = this.password;
       await login(email, password).then(() => {
-        this.$router.go("/");
+        this.$router.push({ path: "/" });
+      });
+    },
+    async setRegistration() {
+      const email = this.email;
+      const username = this.username;
+      const password = this.password;
+      await registration(email, username, password).then(() => {
+        this.$router.push({ path: "/" });
       });
     },
     showSignIn() {

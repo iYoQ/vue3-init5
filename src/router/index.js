@@ -8,6 +8,9 @@ import NewsSingle from "@/views/NewsSingle.vue";
 import AppLogin from "@/components/AppLogin.vue";
 import CreateArticle from "@/views/CreateArticle.vue";
 import CreateNews from "@/views/CreateNews.vue";
+import Activation from "@/views/Activation.vue";
+import UsersList from "@/views/UsersList.vue";
+import Profile from "@/views/Profile.vue";
 
 const routes = [
   {
@@ -54,6 +57,24 @@ const routes = [
     component: AppLogin,
     props: true,
     meta: { notRequiresAuth: true },
+  },
+  {
+    path: "/activate/:uid/:token",
+    name: "activation",
+    component: Activation,
+    props: true,
+  },
+  {
+    path: "/users/",
+    name: "UsersList",
+    component: UsersList,
+    props: true,
+  },
+  {
+    path: "/users/:username",
+    name: "Profile",
+    component: Profile,
+    props: true,
   },
   {
     path: "/about",

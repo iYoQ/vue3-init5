@@ -10,8 +10,8 @@
             <li class="active">
               <router-link to="/">Главная</router-link>
             </li>
-            <li><router-link to="news">Новости</router-link></li>
-            <li><router-link to="/">Пользователи</router-link></li>
+            <li><router-link to="/news">Новости</router-link></li>
+            <li><router-link to="/users">Пользователи</router-link></li>
             <li>
               <a>Категории</a>
               <ul>
@@ -45,7 +45,7 @@
             <a @click="$emit('logout')" class="logout">Выход</a>
           </div>
           <div v-else class="mt-3">
-            <router-link to="login" class="loginBtn">Войти</router-link>
+            <router-link to="/login" class="loginBtn">Войти</router-link>
           </div>
         </nav>
       </div>
